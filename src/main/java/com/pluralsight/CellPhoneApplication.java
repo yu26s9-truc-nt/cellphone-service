@@ -21,12 +21,7 @@ public class CellPhoneApplication
         System.out.print("Who is the owner of the phone? ");
         cellPhone.setOwner(scanner.nextLine());
 
-        System.out.println("Cell Phone Details:");
-        System.out.println("Serial Number: " + cellPhone.getSerialNumber());
-        System.out.println("Model: " + cellPhone.getModel());
-        System.out.println("Carrier: " + cellPhone.getCarrier());
-        System.out.println("Phone Number: " + cellPhone.getPhoneNumber());
-        System.out.println("Owner: " + cellPhone.getOwner());
-
+        System.out.println(cellPhone.toString());
+        scanner.close();
     }
 }

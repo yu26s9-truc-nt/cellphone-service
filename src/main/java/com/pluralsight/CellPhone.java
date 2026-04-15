@@ -54,4 +54,12 @@ public class CellPhone {
     public void setOwner(String owner) {
         this.owner = owner;
     }
+
+    public String toString() {
+        return "Serial Number: " + this.serialNumber + "\n" +
+               "Model: " + this.model + "\n" +
+               "Carrier: " + this.carrier + "\n" +
+               "Phone Number: " + this.phoneNumber + "\n" +
+               "Owner: " + this.owner;
+    }
 }
