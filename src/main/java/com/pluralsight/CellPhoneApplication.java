@@ -5,23 +5,20 @@ import com.pluralsight.CellPhone;
 
 public class CellPhoneApplication 
 {
+    public static void display(CellPhone cellPhone) {
+        System.out.println(cellPhone);
+    }
+
     public static void main(String[] args) {
-        CellPhone cellPhone = new CellPhone();
         Scanner scanner = new Scanner(System.in);
+        CellPhone cellPhone1 = CellPhone.createCellPhone(scanner);
+        CellPhone cellPhone2 = CellPhone.createCellPhone(scanner);
 
-        System.out.print("What is the serial number? ");
-        cellPhone.setSerialNumber(scanner.nextInt());
-        scanner.nextLine();
-        System.out.print("What model is the phone? ");
-        cellPhone.setModel(scanner.nextLine());
-        System.out.print("Who is the carrier? ");
-        cellPhone.setCarrier(scanner.nextLine());
-        System.out.print("What is the phone number? ");
-        cellPhone.setPhoneNumber(scanner.nextLine());
-        System.out.print("Who is the owner of the phone? ");
-        cellPhone.setOwner(scanner.nextLine());
+        display(cellPhone1);
+        display(cellPhone2);
 
-        System.out.println(cellPhone.toString());
+        cellPhone1.dial(cellPhone2.getPhoneNumber());
+        cellPhone2.dial(cellPhone1.getPhoneNumber());
         scanner.close();
     }
 }

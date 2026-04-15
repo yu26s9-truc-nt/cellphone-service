@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.util.Scanner;
+
 public class CellPhone {
     private int serialNumber;
     private String model;
@@ -61,5 +63,25 @@ public class CellPhone {
                "Carrier: " + this.carrier + "\n" +
                "Phone Number: " + this.phoneNumber + "\n" +
                "Owner: " + this.owner;
+    }
+
+    public void dial(String phoneNumber) {
+        System.out.printf("%s's phone is calling %s\n", this.owner, phoneNumber);
+    }
+
+    public static CellPhone createCellPhone(Scanner scanner) {
+        CellPhone cellPhone = new CellPhone();
+        System.out.print("What is the serial number? ");
+        cellPhone.setSerialNumber(scanner.nextInt());
+        scanner.nextLine();
+        System.out.print("What model is the phone? ");
+        cellPhone.setModel(scanner.nextLine());
+        System.out.print("Who is the carrier? ");
+        cellPhone.setCarrier(scanner.nextLine());
+        System.out.print("What is the phone number? ");
+        cellPhone.setPhoneNumber(scanner.nextLine());
+        System.out.print("Who is the owner of the phone? ");
+        cellPhone.setOwner(scanner.nextLine());
+        return cellPhone;
     }
 }
