@@ -17,6 +17,14 @@ public class CellPhone {
         this.owner = "";
     }
 
+    public CellPhone(int serialNumber, String model, String carrier, String phoneNumber, String owner) {
+        this.serialNumber = serialNumber;
+        this.model = model;
+        this.carrier = carrier;
+        this.phoneNumber = phoneNumber;
+        this.owner = owner;
+    }
+
     public int getSerialNumber() {
         return this.serialNumber;
     }
@@ -69,19 +77,24 @@ public class CellPhone {
         System.out.printf("%s's phone is calling %s\n", this.owner, phoneNumber);
     }
 
+    public void dial(CellPhone phone) {
+        System.out.printf("%s's phone is calling %s\n", this.owner, phone.getPhoneNumber());
+    }
+
     public static CellPhone createCellPhone(Scanner scanner) {
-        CellPhone cellPhone = new CellPhone();
         System.out.print("What is the serial number? ");
-        cellPhone.setSerialNumber(scanner.nextInt());
+        int serialNumber = scanner.nextInt();
         scanner.nextLine();
         System.out.print("What model is the phone? ");
-        cellPhone.setModel(scanner.nextLine());
+        String model = scanner.nextLine();
         System.out.print("Who is the carrier? ");
-        cellPhone.setCarrier(scanner.nextLine());
+        String carrier = scanner.nextLine();
         System.out.print("What is the phone number? ");
-        cellPhone.setPhoneNumber(scanner.nextLine());
+        String phoneNumber = scanner.nextLine();
         System.out.print("Who is the owner of the phone? ");
-        cellPhone.setOwner(scanner.nextLine());
+        String owner = scanner.nextLine();
+
+        CellPhone cellPhone = new CellPhone(serialNumber, model, carrier, phoneNumber, owner);
         return cellPhone;
     }
 }

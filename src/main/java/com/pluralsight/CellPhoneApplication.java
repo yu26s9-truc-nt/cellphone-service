@@ -17,7 +17,7 @@ public class CellPhoneApplication
         display(cellPhone1);
         display(cellPhone2);
 
-        cellPhone1.dial(cellPhone2.getPhoneNumber());
+        cellPhone1.dial(cellPhone2);
         cellPhone2.dial(cellPhone1.getPhoneNumber());
         scanner.close();
     }
